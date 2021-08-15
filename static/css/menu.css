@@ -1,0 +1,285 @@
+﻿/****************************************************** */
+/******************  Main Header style **************** */
+/****************************************************** */
+.main-header {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 999;
+    padding-top: 20px;
+    border-bottom: 1px solid rgba(229, 229, 229, 0.1);
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+.main-header:before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: '';
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -999;
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    box-shadow: 0px 0px 30px 0px rgba(87, 95, 245, .10);
+    background: transparent linear-gradient(240deg, #1D32CC 0%, #EE3163 100%) 0% 0% no-repeat padding-box;
+}
+
+.main-header.fixed-header:before {
+    opacity: 1;
+}
+
+.fixed-header {
+    padding-top: 0;
+}
+
+.bg-gradient:before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    background: transparent linear-gradient(240deg, #1D32CC 0%, #EE3163 100%) 0% 0% no-repeat padding-box;
+}
+
+.main-header.bg-gradient:before {
+    opacity: 1;
+}
+
+.header-inner {
+    position: relative;
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+/** Header Main Menu */
+
+.main-menu .navbar-collapse {
+    padding: 0px;
+}
+
+.main-menu .navigation li {
+    float: left;
+    padding: 38px 33px;
+}
+
+.main-menu .navigation li.dropdown > a {
+    position: relative;
+}
+
+.main-menu .navigation li.dropdown > a:after {
+    content: "\f078";
+    position: absolute;
+    top: 3px;
+    right: -20px;
+    font-size: 10px;
+    font-weight: 600;
+    font-family: "Font Awesome 5 Free";
+}
+
+.main-menu .navigation li.dropdown .dropdown-btn {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    width: 50px;
+    height: 39px;
+    color: #eeeeee69;
+    display: none;
+    cursor: pointer;
+    line-height: 43px;
+    text-align: center;
+    border-left: 1px solid #eeeeee0f;
+}
+
+.main-menu .navigation li a {
+    opacity: 1;
+    display: block;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    text-transform: capitalize;
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+.main-menu .navigation li:hover > a,
+.main-menu .navigation li.current-menu-item > a {
+    color: #57CC61;
+}
+
+.main-menu .navigation li ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 200px;
+    z-index: 100;
+    display: none;
+    background: #FFFFFF;
+    border-radius: 0 0 5px 5px;
+    box-shadow: inset 0 0 0 10px #FFFFFF, 0 5px 15px -5px rgba(0,0,0,.2);
+}
+
+.main-menu .navigation li ul li {
+    width: 100%;
+    padding: 7px 20px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.main-menu .navigation li ul li:last-child {
+    border-bottom: none;
+}
+
+.main-menu .navigation li ul li a {
+    padding: 8px 5px;
+    line-height: 24px;
+    color: #3A3064;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.main-menu .navigation li ul li ul {
+    left: 100%;
+    top: 0%;
+}
+
+.main-menu .navbar-header {
+    display: none;
+}
+
+.main-menu .navbar-header .navbar-toggle {
+    float: right;
+    padding: 4px 0;
+    cursor: pointer;
+    background: transparent;
+}
+
+.main-menu .navbar-header .navbar-toggle .icon-bar {
+    height: 2px;
+    width: 30px;
+    display: block;
+    margin: 7px 5px;
+    background: #ffffff94;
+}
+
+.menu-btn {
+    margin-left: 45px;
+}
+
+.menu-btn .theme-btn {
+    color: #9202B7;
+    font-weight: 500;
+    padding: 12px 37px;
+}
+
+.menu-btn .theme-btn:before {
+    opacity: 1;
+    background: transparent linear-gradient(240deg, #ACCBEE 0%, #E7F0FD 100%) 0% 0% no-repeat padding-box;
+}
+
+.menu-btn .theme-btn:hover:before {
+    opacity: 0;
+}
+
+.menu-btn .theme-btn:hover {
+    color: #FFFFFF;
+    background: #57CC61;
+}
+
+
+@media only screen and (max-width: 1199px) {
+    .main-menu .navigation li {
+        padding: 38px 22px;
+    }
+    .menu-btn {
+        margin-left: 30px;
+    }
+    
+}
+
+
+/* Mobile Menu */
+
+@media only screen and (max-width: 991px) {
+    .header-inner {
+        padding: 15px 0;
+    }
+    .fixed-header {
+        top: 0;
+    }
+    .menu-btn {
+        display: none;
+    }
+    .main-menu .navigation li:before {
+        content: none;
+    }
+    .main-header .header-upper .container-fluid {
+        padding: 0;
+    }
+    .main-header .logo-outer {
+        position: absolute;
+        width: 155px;
+        top: 17px;
+        -webkit-transition: all 500ms ease;
+        transition: all 500ms ease;
+    }
+    .main-menu {
+        width: 100%;
+    }
+    .main-menu .navbar-header {
+        display: block;
+    }
+    .main-menu .navigation {
+        overflow: auto;
+        max-height: 310px;
+        margin: 50px 0 25px;
+    }
+    .main-menu .navigation li {
+        float: none;
+        padding: 0 20px;
+        border-top: 1px solid #eeeeee0f;
+    }
+    .main-menu .navigation li:last-child {
+        border-bottom: 1px solid #eeeeee0f;
+    }
+    .main-menu .navigation li.dropdown .dropdown-btn {
+        display: block;
+    }
+    .main-menu .navigation li a {
+        padding: 8px 10px;
+        line-height: 22px;
+    }
+    .main-menu .navigation li a:after {
+        display: none;
+    }
+    .main-menu .navigation li ul {
+        position: relative;
+        display: none;
+        width: 100%;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        background: transparent;
+    }
+    .main-menu .navigation li ul:after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+    .main-menu .navigation li ul li {
+        padding: 0 20px;
+        border-bottom: none;
+    }
+    .main-menu .navigation li ul li a {
+        color: #FFFFFF;
+    }
+    .main-menu .navigation li ul li ul {
+        left: auto;
+    }
+}
+
